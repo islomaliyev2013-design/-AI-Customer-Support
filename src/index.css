@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #07090e;
+    color: #e2e8f0;
+    overflow-x: hidden;
+  }
+
+  #root {
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    max-width: none;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0d14;
+}
+::-webkit-scrollbar-thumb {
+  background: #232738;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7c3aed;
+}
+
+/* Glassmorphism Classes for Ref Image 1 */
+.glass-card {
+  background: rgba(10, 11, 20, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(168, 85, 247, 0.22);
+  box-shadow: 0 0 50px -10px rgba(147, 51, 234, 0.25), 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-card-hover:hover {
+  border-color: rgba(168, 85, 247, 0.45);
+  box-shadow: 0 0 60px -5px rgba(168, 85, 247, 0.35), 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+}
+
+.neon-btn {
+  background: linear-gradient(135deg, #9333ea 0%, #7928ca 50%, #6366f1 100%);
+  box-shadow: 0 0 25px rgba(147, 51, 234, 0.45);
+  transition: all 0.25s ease;
+}
+.neon-btn:hover {
+  box-shadow: 0 0 35px rgba(168, 85, 247, 0.75);
+  transform: translateY(-1px);
+}
+.neon-btn:active {
+  transform: translateY(0);
+}
+
+/* Dark Premium Dashboard Classes for Ref Image 2 */
+.dashboard-panel {
+  background-color: #0d1017;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 1rem;
+}
+
+.dashboard-panel-hover {
+  transition: all 0.2s ease-in-out;
+}
+.dashboard-panel-hover:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+/* Animated subtle glow */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 6s infinite ease-in-out;
+}
+
+/* Space particle twinkle */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.animate-twinkle {
+  animation: twinkle 3s infinite ease-in-out;
+}
